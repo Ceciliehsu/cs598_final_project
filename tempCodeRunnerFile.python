@@ -1,0 +1,18 @@
+from flask import Flask, jsonify
+import json
+
+app = Flask(__name__)
+
+
+@app.route('/test_api/', methods=['GET'])
+def test_api():
+    return jsonify(message='Hello, API')
+
+
+@app.route('/test_api2/', methods=['GET'])
+def test_api2():
+    return json.dumps(message='Hello, API2')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
